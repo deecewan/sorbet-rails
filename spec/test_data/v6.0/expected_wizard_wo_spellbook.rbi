@@ -155,32 +155,35 @@ end
 module Wizard::ModelRelationShared
   extend T::Sig
 
-  sig { params(args: T.untyped).returns(Wizard::ActiveRecord_Relation) }
-  def Gryffindor(*args); end
+  sig { returns(Wizard::ActiveRecord_Relation) }
+  def Gryffindor; end
 
-  sig { params(args: T.untyped).returns(Wizard::ActiveRecord_Relation) }
-  def Hufflepuff(*args); end
+  sig { returns(Wizard::ActiveRecord_Relation) }
+  def Hufflepuff; end
 
-  sig { params(args: T.untyped).returns(Wizard::ActiveRecord_Relation) }
-  def Ravenclaw(*args); end
+  sig { returns(Wizard::ActiveRecord_Relation) }
+  def Ravenclaw; end
 
-  sig { params(args: T.untyped).returns(Wizard::ActiveRecord_Relation) }
-  def Slytherin(*args); end
+  sig { returns(Wizard::ActiveRecord_Relation) }
+  def Slytherin; end
 
-  sig { params(args: T.untyped).returns(Wizard::ActiveRecord_Relation) }
-  def not_Gryffindor(*args); end
+  sig { returns(Wizard::ActiveRecord_Relation) }
+  def not_Gryffindor; end
 
-  sig { params(args: T.untyped).returns(Wizard::ActiveRecord_Relation) }
-  def not_Hufflepuff(*args); end
+  sig { returns(Wizard::ActiveRecord_Relation) }
+  def not_Hufflepuff; end
 
-  sig { params(args: T.untyped).returns(Wizard::ActiveRecord_Relation) }
-  def not_Ravenclaw(*args); end
+  sig { returns(Wizard::ActiveRecord_Relation) }
+  def not_Ravenclaw; end
 
-  sig { params(args: T.untyped).returns(Wizard::ActiveRecord_Relation) }
-  def not_Slytherin(*args); end
+  sig { returns(Wizard::ActiveRecord_Relation) }
+  def not_Slytherin; end
 
-  sig { params(args: T.untyped).returns(Wizard::ActiveRecord_Relation) }
-  def recent(*args); end
+  sig { returns(Wizard::ActiveRecord_Relation) }
+  def recent; end
+
+  sig { params(arg0: T.untyped).returns(Wizard::ActiveRecord_Relation) }
+  def within(arg0); end
 
   sig { returns(Wizard::ActiveRecord_Relation) }
   def all; end

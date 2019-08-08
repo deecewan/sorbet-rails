@@ -197,20 +197,23 @@ end
 module Wand::ModelRelationShared
   extend T::Sig
 
-  sig { params(args: T.untyped).returns(Wand::ActiveRecord_Relation) }
-  def basilisk_horn(*args); end
+  sig { returns(Wand::ActiveRecord_Relation) }
+  def basilisk_horn; end
 
-  sig { params(args: T.untyped).returns(Wand::ActiveRecord_Relation) }
-  def dragon_heartstring(*args); end
+  sig { returns(Wand::ActiveRecord_Relation) }
+  def dragon_heartstring; end
 
-  sig { params(args: T.untyped).returns(Wand::ActiveRecord_Relation) }
-  def phoenix_feather(*args); end
+  sig { returns(Wand::ActiveRecord_Relation) }
+  def phoenix_feather; end
 
-  sig { params(args: T.untyped).returns(Wand::ActiveRecord_Relation) }
-  def recent(*args); end
+  sig { returns(Wand::ActiveRecord_Relation) }
+  def recent; end
 
-  sig { params(args: T.untyped).returns(Wand::ActiveRecord_Relation) }
-  def unicorn_tail_hair(*args); end
+  sig { returns(Wand::ActiveRecord_Relation) }
+  def unicorn_tail_hair; end
+
+  sig { params(arg0: T.untyped).returns(Wand::ActiveRecord_Relation) }
+  def within(arg0); end
 
   sig { returns(Wand::ActiveRecord_Relation) }
   def all; end

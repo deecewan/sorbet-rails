@@ -41,11 +41,11 @@ end
 module ActiveStorage::Blob::ModelRelationShared
   extend T::Sig
 
-  sig { params(args: T.untyped).returns(ActiveStorage::Blob::ActiveRecord_Relation) }
-  def unattached(*args); end
+  sig { returns(ActiveStorage::Blob::ActiveRecord_Relation) }
+  def unattached; end
 
-  sig { params(args: T.untyped).returns(ActiveStorage::Blob::ActiveRecord_Relation) }
-  def with_attached_preview_image(*args); end
+  sig { returns(ActiveStorage::Blob::ActiveRecord_Relation) }
+  def with_attached_preview_image; end
 
   sig { returns(ActiveStorage::Blob::ActiveRecord_Relation) }
   def all; end

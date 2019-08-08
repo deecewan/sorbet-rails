@@ -26,8 +26,11 @@ end
 module Potion::ModelRelationShared
   extend T::Sig
 
-  sig { params(args: T.untyped).returns(Potion::ActiveRecord_Relation) }
-  def recent(*args); end
+  sig { returns(Potion::ActiveRecord_Relation) }
+  def recent; end
+
+  sig { params(arg0: T.untyped).returns(Potion::ActiveRecord_Relation) }
+  def within(arg0); end
 
   sig { returns(Potion::ActiveRecord_Relation) }
   def all; end

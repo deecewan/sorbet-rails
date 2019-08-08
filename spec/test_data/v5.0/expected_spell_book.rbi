@@ -60,8 +60,11 @@ end
 module SpellBook::ModelRelationShared
   extend T::Sig
 
-  sig { params(args: T.untyped).returns(SpellBook::ActiveRecord_Relation) }
-  def recent(*args); end
+  sig { returns(SpellBook::ActiveRecord_Relation) }
+  def recent; end
+
+  sig { params(arg0: T.untyped).returns(SpellBook::ActiveRecord_Relation) }
+  def within(arg0); end
 
   sig { returns(SpellBook::ActiveRecord_Relation) }
   def all; end
