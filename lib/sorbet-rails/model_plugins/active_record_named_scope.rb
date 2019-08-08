@@ -16,13 +16,33 @@ class SorbetRails::ModelPlugins::ActiveRecordNamedScope < SorbetRails::ModelPlug
       source_file = method_obj.source_location[0]
       next unless source_file.include?("lib/active_record/scoping/named.rb")
 
+      params = []
+
+      arity = scope_arity(method_obj)
+      if arity.nil?
+        params = [
+          Parameter.new("*args", type: "T.untyped"),
+        ]
+      else
+        params = (1..arity).each_with_index.map {|_, i| Parameter.new("arg#{i}", type: "T.untyped") }
+      end
+
       ar_named_scope_rbi.create_method(
         method_name.to_s,
-        parameters: [
-          Parameter.new("*args", type: "T.untyped"),
-        ],
+        parameters: params,
         return_type: self.model_relation_class_name,
       )
     end
+  end
+
+  private
+
+  sig { params(method_obj: Method).returns(T.nilable(Integer)) }
+  def scope_arity(method_obj)
+    method_obj.call(*1..100)
+    nil
+  rescue ArgumentError => e
+    num = e.message.scan(/expected (\d)/).flatten.first
+    num.to_i
   end
 end
